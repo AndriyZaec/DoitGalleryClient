@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		49BD19A0220A2B5900010B36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD199F220A2B5900010B36 /* AppDelegate.swift */; };
-		49BD19A2220A2B5900010B36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD19A1220A2B5900010B36 /* ViewController.swift */; };
 		49BD19A5220A2B5900010B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BD19A3220A2B5900010B36 /* Main.storyboard */; };
 		49BD19A7220A2B5A00010B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BD19A6220A2B5A00010B36 /* Assets.xcassets */; };
 		49BD19AA220A2B5A00010B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BD19A8220A2B5A00010B36 /* LaunchScreen.storyboard */; };
+		CAB176D0E2EC32E2B48C7142 /* Pods_DoitGalleryClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CECB2CFCFAC06CFACB2108 /* Pods_DoitGalleryClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21CECB2CFCFAC06CFACB2108 /* Pods_DoitGalleryClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoitGalleryClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD199C220A2B5900010B36 /* DoitGalleryClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoitGalleryClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD199F220A2B5900010B36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49BD19A1220A2B5900010B36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49BD19A4220A2B5900010B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49BD19A6220A2B5A00010B36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49BD19A9220A2B5A00010B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49BD19AB220A2B5A00010B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58B3F62426ED2614EAF569B6 /* Pods-DoitGalleryClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.release.xcconfig"; sourceTree = "<group>"; };
+		87A5BEB10814AD5D8075B8C5 /* Pods-DoitGalleryClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB176D0E2EC32E2B48C7142 /* Pods_DoitGalleryClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,8 @@
 			children = (
 				49BD199E220A2B5900010B36 /* DoitGalleryClient */,
 				49BD199D220A2B5900010B36 /* Products */,
+				B91BAC2B411409455D5F67C1 /* Pods */,
+				A06CADD17FCA0E95D027D6F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +60,77 @@
 			isa = PBXGroup;
 			children = (
 				49BD199F220A2B5900010B36 /* AppDelegate.swift */,
-				49BD19A1220A2B5900010B36 /* ViewController.swift */,
-				49BD19A3220A2B5900010B36 /* Main.storyboard */,
 				49BD19A6220A2B5A00010B36 /* Assets.xcassets */,
-				49BD19A8220A2B5A00010B36 /* LaunchScreen.storyboard */,
-				49BD19AB220A2B5A00010B36 /* Info.plist */,
+				49BD19B3220A2E7F00010B36 /* ViewControllers */,
+				49BD19B4220A2EEB00010B36 /* Models */,
+				49BD19B6220A2F2D00010B36 /* Views */,
+				49BD19B5220A2F1600010B36 /* Networking */,
+				49BD19B1220A2E5F00010B36 /* Storyboards */,
+				49BD19B2220A2E6E00010B36 /* Support Files */,
 			);
 			path = DoitGalleryClient;
+			sourceTree = "<group>";
+		};
+		49BD19B1220A2E5F00010B36 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				49BD19A3220A2B5900010B36 /* Main.storyboard */,
+				49BD19A8220A2B5A00010B36 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		49BD19B2220A2E6E00010B36 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				49BD19AB220A2B5A00010B36 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		49BD19B3220A2E7F00010B36 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		49BD19B4220A2EEB00010B36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49BD19B5220A2F1600010B36 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		49BD19B6220A2F2D00010B36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A06CADD17FCA0E95D027D6F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21CECB2CFCFAC06CFACB2108 /* Pods_DoitGalleryClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B91BAC2B411409455D5F67C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87A5BEB10814AD5D8075B8C5 /* Pods-DoitGalleryClient.debug.xcconfig */,
+				58B3F62426ED2614EAF569B6 /* Pods-DoitGalleryClient.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49BD19AE220A2B5A00010B36 /* Build configuration list for PBXNativeTarget "DoitGalleryClient" */;
 			buildPhases = (
+				CB9637960D556A4CF08825CC /* [CP] Check Pods Manifest.lock */,
 				49BD1998220A2B5900010B36 /* Sources */,
 				49BD1999220A2B5900010B36 /* Frameworks */,
 				49BD199A220A2B5900010B36 /* Resources */,
+				0E77DDE4063C4D89DA51C1C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +201,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E77DDE4063C4D89DA51C1C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB9637960D556A4CF08825CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoitGalleryClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49BD1998220A2B5900010B36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49BD19A2220A2B5900010B36 /* ViewController.swift in Sources */,
 				49BD19A0220A2B5900010B36 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,15 +393,13 @@
 		};
 		49BD19AF220A2B5A00010B36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87A5BEB10814AD5D8075B8C5 /* Pods-DoitGalleryClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BK463G8GP3;
 				INFOPLIST_FILE = DoitGalleryClient/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewZaiets.DoitGalleryClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -298,15 +409,13 @@
 		};
 		49BD19B0220A2B5A00010B36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58B3F62426ED2614EAF569B6 /* Pods-DoitGalleryClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BK463G8GP3;
 				INFOPLIST_FILE = DoitGalleryClient/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewZaiets.DoitGalleryClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
