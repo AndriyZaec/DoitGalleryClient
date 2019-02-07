@@ -23,7 +23,7 @@ final class AuthViewModel: Evantable {
             switch result {
             case .success(let response):
                 do {
-                    let tokenResponse = try JSONDecoder().decode(TokenResponse.self, from: response.data)
+                    let tokenResponse = try JSONDecoder().decode(TokenResponseModel.self, from: response.data)
                     DoitKeychain.wrapper.set(authToken: tokenResponse.token)
                     self?.onDone?()
                 } catch let error {
@@ -42,7 +42,7 @@ final class AuthViewModel: Evantable {
             switch result {
             case .success(let response):
                 do {
-                    let tokenResponse = try JSONDecoder().decode(TokenResponse.self, from: response.data)
+                    let tokenResponse = try JSONDecoder().decode(TokenResponseModel.self, from: response.data)
                     DoitKeychain.wrapper.set(authToken: tokenResponse.token)
                     self?.onDone?()
                 } catch let error {
