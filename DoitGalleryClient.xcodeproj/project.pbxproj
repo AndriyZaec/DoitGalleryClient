@@ -11,6 +11,9 @@
 		499D855C220A450000EF3CBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D855B220A450000EF3CBF /* Constants.swift */; };
 		499D855E220A510C00EF3CBF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D855D220A510C00EF3CBF /* TokenResponse.swift */; };
 		499D8560220A52B500EF3CBF /* DoitKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D855F220A52B500EF3CBF /* DoitKeychain.swift */; };
+		499D8562220BA45C00EF3CBF /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8561220BA45C00EF3CBF /* UIViewController+Utils.swift */; };
+		499D8564220BA56500EF3CBF /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8563220BA56500EF3CBF /* UIAlertController.swift */; };
+		499D8566220BACED00EF3CBF /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8565220BACED00EF3CBF /* LoaderController.swift */; };
 		49BD19A0220A2B5900010B36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD199F220A2B5900010B36 /* AppDelegate.swift */; };
 		49BD19A5220A2B5900010B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BD19A3220A2B5900010B36 /* Main.storyboard */; };
 		49BD19A7220A2B5A00010B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BD19A6220A2B5A00010B36 /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 		499D855B220A450000EF3CBF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		499D855D220A510C00EF3CBF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		499D855F220A52B500EF3CBF /* DoitKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitKeychain.swift; sourceTree = "<group>"; };
+		499D8561220BA45C00EF3CBF /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		499D8563220BA56500EF3CBF /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		499D8565220BACED00EF3CBF /* LoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
 		49BD199C220A2B5900010B36 /* DoitGalleryClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoitGalleryClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD199F220A2B5900010B36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BD19A4220A2B5900010B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			children = (
 				49E0386F220A375E008A2CA2 /* Eventable.swift */,
 				499D855F220A52B500EF3CBF /* DoitKeychain.swift */,
+				499D8565220BACED00EF3CBF /* LoaderController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -160,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				49E03873220A3915008A2CA2 /* UITextField+Utils.swift */,
+				499D8561220BA45C00EF3CBF /* UIViewController+Utils.swift */,
+				499D8563220BA56500EF3CBF /* UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,8 +314,11 @@
 				49E03870220A375E008A2CA2 /* Eventable.swift in Sources */,
 				49E0386B220A3687008A2CA2 /* AuthViewController.swift in Sources */,
 				49BD19A0220A2B5900010B36 /* AppDelegate.swift in Sources */,
+				499D8564220BA56500EF3CBF /* UIAlertController.swift in Sources */,
+				499D8562220BA45C00EF3CBF /* UIViewController+Utils.swift in Sources */,
 				499D855C220A450000EF3CBF /* Constants.swift in Sources */,
 				499D855A220A445F00EF3CBF /* DoitAuthAPI.swift in Sources */,
+				499D8566220BACED00EF3CBF /* LoaderController.swift in Sources */,
 				499D8560220A52B500EF3CBF /* DoitKeychain.swift in Sources */,
 				499D855E220A510C00EF3CBF /* TokenResponse.swift in Sources */,
 				49E0386D220A36AA008A2CA2 /* AuthViewModel.swift in Sources */,

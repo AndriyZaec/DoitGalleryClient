@@ -9,14 +9,32 @@
 import Foundation
 import UIKit
 
-final class AuthViewController: UIViewController {
+enum AuthViewControllerFlow {
+    case signUp
+    case signIn
+    
+    var buttonTitle: String {
+        switch self {
+        case .signIn:
+            return "Sign Up"
+        case .signUp:
+            return "Sign In"
+        }
+    }
+}
 
+final class AuthViewController: UIViewController {
+    
     //MARK: - Properties
     
     @IBOutlet private weak var avatarImageView: UIImageView?
     @IBOutlet private weak var usernameTextField: UITextField?
     @IBOutlet private weak var emailTextField: UITextField?
     @IBOutlet private weak var passwordTextField: UITextField?
+    @IBOutlet private weak var flowChangeButton: UIButton?
+    
+    private var flow: AuthViewControllerFlow = .signIn
+    private let viewModel = AuthViewModel()
     
     //MARK: - Lifecycle -
     
@@ -48,6 +66,15 @@ final class AuthViewController: UIViewController {
         pickUpPhoto()
     }
     
+    @IBAction private func switchFlowAction(_ sender: UIButton) {
+        flow = flow == .signIn ? .signUp : .signIn
+        performFlowUITransition()
+    }
+    
+    @IBAction private func sendAction(_ sender: UIButton) {
+        validateAndPerformRequest()
+    }
+    
     //MARK: - UI -
     
     private func setupUI() {
@@ -58,20 +85,82 @@ final class AuthViewController: UIViewController {
         guard let avatarImageView = avatarImageView else { return }
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2.0
+        
+        flowChangeButton?.setTitle(flow.buttonTitle, for: .normal)
+    }
+    
+    private func performFlowUITransition() {
+        flowChangeButton?.setTitle(flow.buttonTitle, for: .normal)
+        switch flow {
+        case .signIn:
+            UIView.animate(withDuration: 0.4) { [weak self] in
+                self?.avatarImageView?.alpha = 0
+                self?.usernameTextField?.alpha = 0
+            }
+        case .signUp:
+            UIView.animate(withDuration: 0.4) { [weak self] in
+                self?.avatarImageView?.alpha = 1
+                self?.usernameTextField?.alpha = 1
+            }
+        }
     }
     
     //MARK: - Privates -
     
     private func configViewModel() {
         
+        viewModel.onLoading = { isLoading in
+            if isLoading {
+                LoaderController.sharedInstance.showLoader()
+            } else {
+                LoaderController.sharedInstance.removeLoader()
+            }
+        }
+        
+        viewModel.onDone = {
+            self.alert(title: DoitKeychain.wrapper.authToken ?? "lol").action().present(self)
+        }
+        
+        viewModel.onError = { [unowned self] errorMsg in
+            self.alert(title: errorMsg).action().present(self)
+        }
+        
     }
     
-    private func validateFields() {
-        guard let email = emailTextField?.text, let pass = passwordTextField?.text else {
+    private func validateAndPerformRequest() {
+        guard let email = emailTextField?.text,
+            let pass = passwordTextField?.text,
+            !email.isEmpty,
+            !pass.isEmpty else {
+                alert(title: "Ooops, Email & Password fields are required!").action().present(self)
+                return
+        }
+        
+        guard isValidEmail(email: email) else {
+            alert(title: "Ooops, Email is not valid!").action().present(self)
             return
         }
         
-        // TODO: - Validation
+        if flow == .signIn {
+            viewModel.login(params: LoginUserParameters(email,pass))
+            return
+        }
+        
+        guard flow == .signUp,
+            let avatar = avatarImageView?.image,
+            let username = usernameTextField?.text else {
+                alert(title: "Ooops, data is not valid!").action().present(self)
+                return
+        }
+        
+        viewModel.createUser(params: CreateUserParameters(username, email, pass, avatar))
+        
+    }
+    
+    private func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: email)
     }
     
     private func configViewsBehaviour() {

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="1Ks-bz-1mF">
+                            <imageView alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="1Ks-bz-1mF">
                                 <rect key="frame" x="100" y="144" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="height" constant="120" id="vmu-TH-ycX"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKC-Zf-Kzh">
+                            <textField opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKC-Zf-Kzh">
                                 <rect key="frame" x="15" y="299" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fIE-oK-Tg5"/>
@@ -60,21 +60,37 @@
                                     <constraint firstAttribute="height" constant="40" id="mta-cI-Wch"/>
                                 </constraints>
                                 <state key="normal" title="SEND"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWb-5w-W4Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88w-MM-aKl">
+                                <rect key="frame" x="15" y="518" width="290" height="30"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchFlowAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p0N-ni-UIW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1Ks-bz-1mF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="02E-Uv-8JP"/>
                             <constraint firstItem="1Ks-bz-1mF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="0eB-Nn-Voy"/>
+                            <constraint firstItem="88w-MM-aKl" firstAttribute="trailing" secondItem="H5r-sp-5sM" secondAttribute="trailing" id="2Jd-oY-m0g"/>
                             <constraint firstItem="NbC-oW-Wav" firstAttribute="leading" secondItem="jKC-Zf-Kzh" secondAttribute="leading" id="3bD-QV-M4B"/>
                             <constraint firstItem="H5r-sp-5sM" firstAttribute="leading" secondItem="jKC-Zf-Kzh" secondAttribute="leading" id="7cR-k3-buR"/>
                             <constraint firstItem="jKC-Zf-Kzh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="8eO-s4-yYF"/>
                             <constraint firstItem="HBP-eV-XE7" firstAttribute="top" secondItem="jKC-Zf-Kzh" secondAttribute="bottom" constant="10" id="AGI-w2-VGr"/>
                             <constraint firstItem="NbC-oW-Wav" firstAttribute="trailing" secondItem="jKC-Zf-Kzh" secondAttribute="trailing" id="DYK-Gb-Caa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="88w-MM-aKl" secondAttribute="bottom" constant="20" id="Op9-dX-LVK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jKC-Zf-Kzh" secondAttribute="trailing" constant="15" id="OyY-dr-fgu"/>
+                            <constraint firstItem="88w-MM-aKl" firstAttribute="leading" secondItem="H5r-sp-5sM" secondAttribute="leading" id="S0j-gK-TGg"/>
                             <constraint firstItem="HBP-eV-XE7" firstAttribute="leading" secondItem="jKC-Zf-Kzh" secondAttribute="leading" id="Vqv-yL-Xcc"/>
                             <constraint firstItem="H5r-sp-5sM" firstAttribute="top" secondItem="NbC-oW-Wav" secondAttribute="bottom" constant="30" id="bIs-iR-LB5"/>
                             <constraint firstItem="HBP-eV-XE7" firstAttribute="trailing" secondItem="jKC-Zf-Kzh" secondAttribute="trailing" id="eld-r1-XeX"/>
+                            <constraint firstItem="88w-MM-aKl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gWt-pv-iXa"/>
                             <constraint firstItem="NbC-oW-Wav" firstAttribute="top" secondItem="HBP-eV-XE7" secondAttribute="bottom" constant="10" id="iUy-Lh-QcR"/>
                             <constraint firstItem="jKC-Zf-Kzh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="maP-m1-vbl"/>
                             <constraint firstItem="H5r-sp-5sM" firstAttribute="trailing" secondItem="jKC-Zf-Kzh" secondAttribute="trailing" id="q8M-fZ-Wxr"/>
@@ -85,6 +101,7 @@
                     <connections>
                         <outlet property="avatarImageView" destination="1Ks-bz-1mF" id="u1r-QY-5iT"/>
                         <outlet property="emailTextField" destination="HBP-eV-XE7" id="fjT-WF-BcR"/>
+                        <outlet property="flowChangeButton" destination="88w-MM-aKl" id="BTx-Oo-7w5"/>
                         <outlet property="passwordTextField" destination="NbC-oW-Wav" id="uJo-u7-JqI"/>
                         <outlet property="usernameTextField" destination="jKC-Zf-Kzh" id="Eze-bB-atz"/>
                     </connections>

@@ -17,11 +17,14 @@ final class AuthViewModel: Evantable {
     let provider = MoyaProvider<DoitAuthAPI>()
     
     func login(params: LoginUserParameters) {
+        self.onLoading?(true)
         provider.request(.login(params)) { [weak self] result in
+            self?.onLoading?(false)
             switch result {
             case .success(let response):
                 do {
-                    _ = try JSONDecoder().decode(TokenResponse.self, from: response.data)
+                    let tokenResponse = try JSONDecoder().decode(TokenResponse.self, from: response.data)
+                    DoitKeychain.wrapper.set(authToken: tokenResponse.token)
                     self?.onDone?()
                 } catch let error {
                     self?.onError?(error.localizedDescription)
@@ -33,11 +36,14 @@ final class AuthViewModel: Evantable {
     }
     
     func createUser(params: CreateUserParameters) {
+        self.onLoading?(true)
         provider.request(.createUser(params)) { [weak self] result in
+            self?.onLoading?(false)
             switch result {
             case .success(let response):
                 do {
-                    _ = try JSONDecoder().decode(TokenResponse.self, from: response.data)
+                    let tokenResponse = try JSONDecoder().decode(TokenResponse.self, from: response.data)
+                    DoitKeychain.wrapper.set(authToken: tokenResponse.token)
                     self?.onDone?()
                 } catch let error {
                    self?.onError?(error.localizedDescription)

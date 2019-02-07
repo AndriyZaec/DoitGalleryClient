@@ -9,9 +9,5 @@
 import Foundation
 
 struct TokenResponse: Codable {
-    var token: String {
-        didSet {
-            DoitKeychain.wrapper.set(authToken: token)
-        }
-    }
+    let token: String
 }
