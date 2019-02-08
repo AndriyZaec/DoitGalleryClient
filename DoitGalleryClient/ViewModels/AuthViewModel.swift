@@ -9,12 +9,19 @@
 import Foundation
 import Moya
 
-final class AuthViewModel: Evantable {
+final class AuthViewModel: Eventable {
+    
+    // MARK: - Events -
+    
     var onError: ((String) -> Void)?
     var onDone: (() -> Void)?
     var onLoading: ((Bool) -> Void)?
     
-    let provider = MoyaProvider<DoitAuthAPI>()
+    // MARK: - Properties -
+    
+    private let provider = MoyaProvider<DoitAuthService>()
+    
+    // MARK: - Networking -
     
     func login(params: LoginUserParameters) {
         self.onLoading?(true)

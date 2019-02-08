@@ -118,7 +118,9 @@ final class AuthViewController: UIViewController {
         }
         
         viewModel.onDone = {
-            self.alert(title: DoitKeychain.wrapper.authToken ?? "lol").action().present(self)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let galleryVC = storyboard.instantiateViewController(withIdentifier: String(describing: GalleryViewController.self))
+            self.navigationController?.setViewControllers([galleryVC], animated: true)
         }
         
         viewModel.onError = { [unowned self] errorMsg in

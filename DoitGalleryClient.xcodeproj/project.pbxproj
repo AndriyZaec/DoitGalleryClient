@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		499D855A220A445F00EF3CBF /* DoitAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8559220A445F00EF3CBF /* DoitAuthAPI.swift */; };
+		499D855A220A445F00EF3CBF /* DoitAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8559220A445F00EF3CBF /* DoitAuthService.swift */; };
 		499D855C220A450000EF3CBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D855B220A450000EF3CBF /* Constants.swift */; };
 		499D855E220A510C00EF3CBF /* TokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D855D220A510C00EF3CBF /* TokenResponseModel.swift */; };
 		499D8560220A52B500EF3CBF /* DoitKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D855F220A52B500EF3CBF /* DoitKeychain.swift */; };
@@ -18,6 +18,9 @@
 		499D856B220BB4F800EF3CBF /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8569220BB4F800EF3CBF /* GalleryItemCollectionViewCell.swift */; };
 		499D856C220BB4F800EF3CBF /* GalleryItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499D856A220BB4F800EF3CBF /* GalleryItemCollectionViewCell.xib */; };
 		499D856E220BB6CE00EF3CBF /* ImageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D856D220BB6CE00EF3CBF /* ImageResponseModel.swift */; };
+		499D8570220CB05500EF3CBF /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D856F220CB05500EF3CBF /* GalleryViewModel.swift */; };
+		499D8572220CB30700EF3CBF /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8571220CB30700EF3CBF /* LocationHelper.swift */; };
+		499D8574220CBA3A00EF3CBF /* DoitGalleryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D8573220CBA3A00EF3CBF /* DoitGalleryService.swift */; };
 		49BD19A0220A2B5900010B36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD199F220A2B5900010B36 /* AppDelegate.swift */; };
 		49BD19A5220A2B5900010B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BD19A3220A2B5900010B36 /* Main.storyboard */; };
 		49BD19A7220A2B5A00010B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BD19A6220A2B5A00010B36 /* Assets.xcassets */; };
@@ -31,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		21CECB2CFCFAC06CFACB2108 /* Pods_DoitGalleryClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoitGalleryClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		499D8559220A445F00EF3CBF /* DoitAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitAuthAPI.swift; sourceTree = "<group>"; };
+		499D8559220A445F00EF3CBF /* DoitAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitAuthService.swift; sourceTree = "<group>"; };
 		499D855B220A450000EF3CBF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		499D855D220A510C00EF3CBF /* TokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseModel.swift; sourceTree = "<group>"; };
 		499D855F220A52B500EF3CBF /* DoitKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitKeychain.swift; sourceTree = "<group>"; };
@@ -42,6 +45,9 @@
 		499D8569220BB4F800EF3CBF /* GalleryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		499D856A220BB4F800EF3CBF /* GalleryItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		499D856D220BB6CE00EF3CBF /* ImageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponseModel.swift; sourceTree = "<group>"; };
+		499D856F220CB05500EF3CBF /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		499D8571220CB30700EF3CBF /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		499D8573220CBA3A00EF3CBF /* DoitGalleryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitGalleryService.swift; sourceTree = "<group>"; };
 		49BD199C220A2B5900010B36 /* DoitGalleryClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoitGalleryClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD199F220A2B5900010B36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BD19A4220A2B5900010B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,7 +149,8 @@
 		49BD19B5220A2F1600010B36 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				499D8559220A445F00EF3CBF /* DoitAuthAPI.swift */,
+				499D8559220A445F00EF3CBF /* DoitAuthService.swift */,
+				499D8573220CBA3A00EF3CBF /* DoitGalleryService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				49E0386C220A36AA008A2CA2 /* AuthViewModel.swift */,
+				499D856F220CB05500EF3CBF /* GalleryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 				49E0386F220A375E008A2CA2 /* Eventable.swift */,
 				499D855F220A52B500EF3CBF /* DoitKeychain.swift */,
 				499D8565220BACED00EF3CBF /* LoaderController.swift */,
+				499D8571220CB30700EF3CBF /* LocationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -282,6 +291,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
@@ -290,6 +300,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
@@ -330,12 +341,15 @@
 				49BD19A0220A2B5900010B36 /* AppDelegate.swift in Sources */,
 				499D8564220BA56500EF3CBF /* UIAlertController.swift in Sources */,
 				499D8568220BB2AA00EF3CBF /* GalleryViewController.swift in Sources */,
+				499D8572220CB30700EF3CBF /* LocationHelper.swift in Sources */,
 				499D8562220BA45C00EF3CBF /* UIViewController+Utils.swift in Sources */,
 				499D855C220A450000EF3CBF /* Constants.swift in Sources */,
-				499D855A220A445F00EF3CBF /* DoitAuthAPI.swift in Sources */,
+				499D855A220A445F00EF3CBF /* DoitAuthService.swift in Sources */,
 				499D8566220BACED00EF3CBF /* LoaderController.swift in Sources */,
+				499D8574220CBA3A00EF3CBF /* DoitGalleryService.swift in Sources */,
 				499D8560220A52B500EF3CBF /* DoitKeychain.swift in Sources */,
 				499D855E220A510C00EF3CBF /* TokenResponseModel.swift in Sources */,
+				499D8570220CB05500EF3CBF /* GalleryViewModel.swift in Sources */,
 				499D856E220BB6CE00EF3CBF /* ImageResponseModel.swift in Sources */,
 				49E0386D220A36AA008A2CA2 /* AuthViewModel.swift in Sources */,
 			);

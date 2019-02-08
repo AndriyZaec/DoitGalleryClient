@@ -8,6 +8,7 @@ target 'DoitGalleryClient' do
   
   # UI
   pod 'IQKeyboardManagerSwift'
+  pod 'Nuke', '~> 7.5'
   
   # Utils
   pod 'SwiftKeychainWrapper'

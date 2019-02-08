@@ -12,12 +12,12 @@ import Moya
 typealias CreateUserParameters = (username: String, email: String, password: String, avatar: UIImage)
 typealias LoginUserParameters = (email: String, password: String)
 
-enum DoitAuthAPI {
+enum DoitAuthService {
     case createUser(CreateUserParameters)
     case login(LoginUserParameters)
 }
 
-extension DoitAuthAPI: TargetType {
+extension DoitAuthService: TargetType {
     var baseURL: URL {
         return Constants.baseUrl
     }
