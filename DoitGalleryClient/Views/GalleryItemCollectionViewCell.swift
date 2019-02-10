@@ -17,6 +17,23 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var weatherLabel: UILabel?
     @IBOutlet private weak var locationNameLabel: UILabel?
     
+    // MARK: - Lifecycle -
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupUI()
+    }
+    
+    // MARK: - Privates -
+    
+    private func setupUI() {
+        self.contentView.layer.borderWidth = 1
+        self.contentView.layer.borderColor = UIColor.gray.cgColor
+    }
+    
+    // MARK: - Configs -
+    
     func configCell(with model: ImageModel) {
         weatherLabel?.text = model.parameters.weather
         

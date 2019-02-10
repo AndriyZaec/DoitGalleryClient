@@ -62,7 +62,7 @@ final class AuthViewController: UIViewController {
     
     //MARKL - Actions -
     
-    @objc private func setupAvatar(_ sender: UIGestureRecognizer) {
+    @objc private func chooseAvatar(_ sender: UIGestureRecognizer) {
         pickUpPhoto()
     }
     
@@ -168,7 +168,7 @@ final class AuthViewController: UIViewController {
     private func configViewsBehaviour() {
         guard let avatarImageView = avatarImageView else { return }
         avatarImageView.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(setupAvatar(_:)))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseAvatar(_:)))
         avatarImageView.addGestureRecognizer(tapRecognizer)
     }
     

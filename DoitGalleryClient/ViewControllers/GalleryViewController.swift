@@ -19,12 +19,6 @@ class GalleryViewController: UIViewController {
     private let viewModel = GalleryViewModel()
     private let galleryCellReuseId = String(describing: GalleryItemCollectionViewCell.self)
     
-    var galleryDataSource: [ImageModel] = [] {
-        didSet {
-            galleryCollectionView?.reloadData()
-        }
-    }
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -37,8 +31,6 @@ class GalleryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        viewModel.getAllImages()
     }
     
     //MARK: - Privates
@@ -53,7 +45,7 @@ class GalleryViewController: UIViewController {
         }
         
         viewModel.onDone = { [unowned self] in
-            //self.galleryCollectionView?.reloadData()
+            self.galleryCollectionView?.reloadData()
         }
         
         viewModel.onError = { [unowned self] errorMsg in
@@ -66,44 +58,27 @@ class GalleryViewController: UIViewController {
     //MARK: - UI
     
     private func setupUI() {
-        MoyaProvider<DoitGalleryService>().request(.getUserImages) { result in
-            //self?.onLoading?(false)
-            switch result {
-            case .success(let response):
-                do {
-                    let imageResponse = try JSONDecoder().decode(ImageResponseModel.self, from: response.data)
-                    self.galleryDataSource = imageResponse.images
-                    //self?.onDone?()
-                } catch let error {
-                    //self?.onError?(error.localizedDescription)
-                }
-            case .failure(let error):
-                break
-                //self?.onError?(error.localizedDescription)
-            }
-        }
+        viewModel.getAllImages()
     }
-    
-    
 }
 
 extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let galleryCell = cell as? GalleryItemCollectionViewCell else { return }
         
-        galleryCell.configCell(with: galleryDataSource[indexPath.row])
+        galleryCell.configCell(with: viewModel.galleryDataSource[indexPath.row])
     }
 }
 
 extension GalleryViewController: UICollectionViewDataSource {
     
     private func configCollectionView() {
-        galleryCollectionView?.register(GalleryItemCollectionViewCell.self,
+        galleryCollectionView?.register(UINib(nibName: galleryCellReuseId, bundle: nil),
                                         forCellWithReuseIdentifier: galleryCellReuseId)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return galleryDataSource.count
+        return viewModel.galleryDataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

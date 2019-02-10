@@ -29,6 +29,10 @@
 		49E0386D220A36AA008A2CA2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E0386C220A36AA008A2CA2 /* AuthViewModel.swift */; };
 		49E03870220A375E008A2CA2 /* Eventable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E0386F220A375E008A2CA2 /* Eventable.swift */; };
 		49E03874220A3915008A2CA2 /* UITextField+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E03873220A3915008A2CA2 /* UITextField+Utils.swift */; };
+		49F8A4322210BEA300601B08 /* DoitTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4312210BEA300601B08 /* DoitTextFiled.swift */; };
+		49F8A4342210BF5900601B08 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4332210BF5900601B08 /* AddImageViewController.swift */; };
+		49F8A4362210BF7B00601B08 /* AddImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4352210BF7B00601B08 /* AddImageViewModel.swift */; };
+		49F8A4382210C01900601B08 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4372210C01900601B08 /* ImagePickerHelper.swift */; };
 		CAB176D0E2EC32E2B48C7142 /* Pods_DoitGalleryClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CECB2CFCFAC06CFACB2108 /* Pods_DoitGalleryClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,10 @@
 		49E0386C220A36AA008A2CA2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		49E0386F220A375E008A2CA2 /* Eventable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventable.swift; sourceTree = "<group>"; };
 		49E03873220A3915008A2CA2 /* UITextField+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Utils.swift"; sourceTree = "<group>"; };
+		49F8A4312210BEA300601B08 /* DoitTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitTextFiled.swift; sourceTree = "<group>"; };
+		49F8A4332210BF5900601B08 /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
+		49F8A4352210BF7B00601B08 /* AddImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewModel.swift; sourceTree = "<group>"; };
+		49F8A4372210C01900601B08 /* ImagePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
 		58B3F62426ED2614EAF569B6 /* Pods-DoitGalleryClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.release.xcconfig"; sourceTree = "<group>"; };
 		87A5BEB10814AD5D8075B8C5 /* Pods-DoitGalleryClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +141,7 @@
 			children = (
 				49E0386A220A3686008A2CA2 /* AuthViewController.swift */,
 				499D8567220BB2AA00EF3CBF /* GalleryViewController.swift */,
+				49F8A4332210BF5900601B08 /* AddImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -160,6 +169,7 @@
 			children = (
 				499D8569220BB4F800EF3CBF /* GalleryItemCollectionViewCell.swift */,
 				499D856A220BB4F800EF3CBF /* GalleryItemCollectionViewCell.xib */,
+				49F8A4312210BEA300601B08 /* DoitTextFiled.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +179,7 @@
 			children = (
 				49E0386C220A36AA008A2CA2 /* AuthViewModel.swift */,
 				499D856F220CB05500EF3CBF /* GalleryViewModel.swift */,
+				49F8A4352210BF7B00601B08 /* AddImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 				499D855F220A52B500EF3CBF /* DoitKeychain.swift */,
 				499D8565220BACED00EF3CBF /* LoaderController.swift */,
 				499D8571220CB30700EF3CBF /* LocationHelper.swift */,
+				49F8A4372210C01900601B08 /* ImagePickerHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -347,11 +359,15 @@
 				499D855A220A445F00EF3CBF /* DoitAuthService.swift in Sources */,
 				499D8566220BACED00EF3CBF /* LoaderController.swift in Sources */,
 				499D8574220CBA3A00EF3CBF /* DoitGalleryService.swift in Sources */,
+				49F8A4322210BEA300601B08 /* DoitTextFiled.swift in Sources */,
 				499D8560220A52B500EF3CBF /* DoitKeychain.swift in Sources */,
 				499D855E220A510C00EF3CBF /* TokenResponseModel.swift in Sources */,
 				499D8570220CB05500EF3CBF /* GalleryViewModel.swift in Sources */,
 				499D856E220BB6CE00EF3CBF /* ImageResponseModel.swift in Sources */,
+				49F8A4342210BF5900601B08 /* AddImageViewController.swift in Sources */,
+				49F8A4382210C01900601B08 /* ImagePickerHelper.swift in Sources */,
 				49E0386D220A36AA008A2CA2 /* AuthViewModel.swift in Sources */,
+				49F8A4362210BF7B00601B08 /* AddImageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
