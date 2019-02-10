@@ -33,6 +33,8 @@
 		49F8A4342210BF5900601B08 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4332210BF5900601B08 /* AddImageViewController.swift */; };
 		49F8A4362210BF7B00601B08 /* AddImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4352210BF7B00601B08 /* AddImageViewModel.swift */; };
 		49F8A4382210C01900601B08 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4372210C01900601B08 /* ImagePickerHelper.swift */; };
+		49F8A43A2210C5FD00601B08 /* UITextView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4392210C5FD00601B08 /* UITextView+Utils.swift */; };
+		49F8A43C2210D3AD00601B08 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A43B2210D3AD00601B08 /* Data+Utils.swift */; };
 		CAB176D0E2EC32E2B48C7142 /* Pods_DoitGalleryClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CECB2CFCFAC06CFACB2108 /* Pods_DoitGalleryClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		49F8A4332210BF5900601B08 /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 		49F8A4352210BF7B00601B08 /* AddImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewModel.swift; sourceTree = "<group>"; };
 		49F8A4372210C01900601B08 /* ImagePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
+		49F8A4392210C5FD00601B08 /* UITextView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Utils.swift"; sourceTree = "<group>"; };
+		49F8A43B2210D3AD00601B08 /* Data+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Utils.swift"; sourceTree = "<group>"; };
 		58B3F62426ED2614EAF569B6 /* Pods-DoitGalleryClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.release.xcconfig"; sourceTree = "<group>"; };
 		87A5BEB10814AD5D8075B8C5 /* Pods-DoitGalleryClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +206,8 @@
 				49E03873220A3915008A2CA2 /* UITextField+Utils.swift */,
 				499D8561220BA45C00EF3CBF /* UIViewController+Utils.swift */,
 				499D8563220BA56500EF3CBF /* UIAlertController.swift */,
+				49F8A4392210C5FD00601B08 /* UITextView+Utils.swift */,
+				49F8A43B2210D3AD00601B08 /* Data+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,6 +353,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E03874220A3915008A2CA2 /* UITextField+Utils.swift in Sources */,
+				49F8A43C2210D3AD00601B08 /* Data+Utils.swift in Sources */,
+				49F8A43A2210C5FD00601B08 /* UITextView+Utils.swift in Sources */,
 				49E03870220A375E008A2CA2 /* Eventable.swift in Sources */,
 				499D856B220BB4F800EF3CBF /* GalleryItemCollectionViewCell.swift in Sources */,
 				49E0386B220A3687008A2CA2 /* AuthViewController.swift in Sources */,

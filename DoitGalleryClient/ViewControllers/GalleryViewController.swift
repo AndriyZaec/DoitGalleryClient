@@ -23,14 +23,15 @@ class GalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUI()
+
         configCollectionView()
         configViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        viewModel.getAllImages()
     }
     
     //MARK: - Privates
@@ -51,14 +52,6 @@ class GalleryViewController: UIViewController {
         viewModel.onError = { [unowned self] errorMsg in
             self.alert(title: errorMsg).action().present(self)
         }
-    }
-    
-    //MARK: - Navigation
-    
-    //MARK: - UI
-    
-    private func setupUI() {
-        viewModel.getAllImages()
     }
 }
 
