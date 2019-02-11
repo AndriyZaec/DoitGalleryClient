@@ -10,6 +10,7 @@ import UIKit
 
 extension UIAlertController {
     /// Decorate UIAlertController with action
+    @discardableResult
     func action(title: String? = "OK", _ style: UIAlertAction.Style = .default, _ handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         self.addAction(UIAlertAction(title: title, style: style, handler: handler))
         return self

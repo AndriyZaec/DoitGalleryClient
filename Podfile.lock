@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
+  - FLAnimatedImage (1.0.12)
   - IQKeyboardManagerSwift (6.2.0)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
@@ -7,6 +8,9 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
   - Nuke (7.5.1)
+  - Nuke-FLAnimatedImage-Plugin (6.0):
+    - FLAnimatedImage (~> 1.0)
+    - Nuke (~> 7.5)
   - Result (4.0.0)
   - SwiftKeychainWrapper (3.0.1)
 
@@ -14,25 +18,30 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Moya (~> 12.0)
   - Nuke (~> 7.5)
+  - Nuke-FLAnimatedImage-Plugin
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - FLAnimatedImage
     - IQKeyboardManagerSwift
     - Moya
     - Nuke
+    - Nuke-FLAnimatedImage-Plugin
     - Result
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Nuke: 3814db501e55f17951451839c726ffd91641e9a5
+  Nuke-FLAnimatedImage-Plugin: e4c39d13061a08ac0bdcb0cd7a23882f4a43f4a6
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 8b052d0fde117aec68db0bcf23e1ba5c8d15979f
+PODFILE CHECKSUM: 9df98c2d9e0dcf708c2bc751d63ab78a8832a737
 
 COCOAPODS: 1.5.0

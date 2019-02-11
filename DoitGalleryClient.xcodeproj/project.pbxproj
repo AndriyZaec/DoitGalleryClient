@@ -35,6 +35,9 @@
 		49F8A4382210C01900601B08 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4372210C01900601B08 /* ImagePickerHelper.swift */; };
 		49F8A43A2210C5FD00601B08 /* UITextView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4392210C5FD00601B08 /* UITextView+Utils.swift */; };
 		49F8A43C2210D3AD00601B08 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A43B2210D3AD00601B08 /* Data+Utils.swift */; };
+		49F8A43E2210E4FD00601B08 /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A43D2210E4FD00601B08 /* GIFViewController.swift */; };
+		49F8A4402210E81500601B08 /* GIFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A43F2210E81500601B08 /* GIFViewModel.swift */; };
+		49F8A4422210EB0900601B08 /* GIFResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8A4412210EB0900601B08 /* GIFResponseModel.swift */; };
 		CAB176D0E2EC32E2B48C7142 /* Pods_DoitGalleryClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CECB2CFCFAC06CFACB2108 /* Pods_DoitGalleryClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +73,9 @@
 		49F8A4372210C01900601B08 /* ImagePickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
 		49F8A4392210C5FD00601B08 /* UITextView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Utils.swift"; sourceTree = "<group>"; };
 		49F8A43B2210D3AD00601B08 /* Data+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Utils.swift"; sourceTree = "<group>"; };
+		49F8A43D2210E4FD00601B08 /* GIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFViewController.swift; sourceTree = "<group>"; };
+		49F8A43F2210E81500601B08 /* GIFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFViewModel.swift; sourceTree = "<group>"; };
+		49F8A4412210EB0900601B08 /* GIFResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFResponseModel.swift; sourceTree = "<group>"; };
 		58B3F62426ED2614EAF569B6 /* Pods-DoitGalleryClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.release.xcconfig"; sourceTree = "<group>"; };
 		87A5BEB10814AD5D8075B8C5 /* Pods-DoitGalleryClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoitGalleryClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +152,7 @@
 				49E0386A220A3686008A2CA2 /* AuthViewController.swift */,
 				499D8567220BB2AA00EF3CBF /* GalleryViewController.swift */,
 				49F8A4332210BF5900601B08 /* AddImageViewController.swift */,
+				49F8A43D2210E4FD00601B08 /* GIFViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 			children = (
 				499D855D220A510C00EF3CBF /* TokenResponseModel.swift */,
 				499D856D220BB6CE00EF3CBF /* ImageResponseModel.swift */,
+				49F8A4412210EB0900601B08 /* GIFResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 				49E0386C220A36AA008A2CA2 /* AuthViewModel.swift */,
 				499D856F220CB05500EF3CBF /* GalleryViewModel.swift */,
 				49F8A4352210BF7B00601B08 /* AddImageViewModel.swift */,
+				49F8A43F2210E81500601B08 /* GIFViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -307,18 +316,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DoitGalleryClient/Pods-DoitGalleryClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke-FLAnimatedImage-Plugin/NukeFLAnimatedImagePlugin.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NukeFLAnimatedImagePlugin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
@@ -357,12 +370,14 @@
 				49F8A43A2210C5FD00601B08 /* UITextView+Utils.swift in Sources */,
 				49E03870220A375E008A2CA2 /* Eventable.swift in Sources */,
 				499D856B220BB4F800EF3CBF /* GalleryItemCollectionViewCell.swift in Sources */,
+				49F8A43E2210E4FD00601B08 /* GIFViewController.swift in Sources */,
 				49E0386B220A3687008A2CA2 /* AuthViewController.swift in Sources */,
 				49BD19A0220A2B5900010B36 /* AppDelegate.swift in Sources */,
 				499D8564220BA56500EF3CBF /* UIAlertController.swift in Sources */,
 				499D8568220BB2AA00EF3CBF /* GalleryViewController.swift in Sources */,
 				499D8572220CB30700EF3CBF /* LocationHelper.swift in Sources */,
 				499D8562220BA45C00EF3CBF /* UIViewController+Utils.swift in Sources */,
+				49F8A4422210EB0900601B08 /* GIFResponseModel.swift in Sources */,
 				499D855C220A450000EF3CBF /* Constants.swift in Sources */,
 				499D855A220A445F00EF3CBF /* DoitAuthService.swift in Sources */,
 				499D8566220BACED00EF3CBF /* LoaderController.swift in Sources */,
@@ -374,6 +389,7 @@
 				499D856E220BB6CE00EF3CBF /* ImageResponseModel.swift in Sources */,
 				49F8A4342210BF5900601B08 /* AddImageViewController.swift in Sources */,
 				49F8A4382210C01900601B08 /* ImagePickerHelper.swift in Sources */,
+				49F8A4402210E81500601B08 /* GIFViewModel.swift in Sources */,
 				49E0386D220A36AA008A2CA2 /* AuthViewModel.swift in Sources */,
 				49F8A4362210BF7B00601B08 /* AddImageViewModel.swift in Sources */,
 			);
@@ -525,10 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BK463G8GP3;
 				INFOPLIST_FILE = "${PROJECT_DIR}/DoitGalleryClient/Support Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewZaiets.DoitGalleryClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -544,10 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BK463G8GP3;
 				INFOPLIST_FILE = "${PROJECT_DIR}/DoitGalleryClient/Support Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewZaiets.DoitGalleryClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

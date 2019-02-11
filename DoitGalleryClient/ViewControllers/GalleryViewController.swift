@@ -18,6 +18,8 @@ class GalleryViewController: UIViewController {
     
     private let viewModel = GalleryViewModel()
     private let galleryCellReuseId = String(describing: GalleryItemCollectionViewCell.self)
+    private let presentGIFVCSegueID = "presentGIFVC"
+    private var gifWeather: String?
     
     //MARK: - Lifecycle
     
@@ -32,6 +34,12 @@ class GalleryViewController: UIViewController {
         super.viewWillAppear(animated)
         
         viewModel.getAllImages()
+    }
+    
+    //MARK: - Actions -
+    
+    @IBAction private func presentGifAction(_ sender: UIBarButtonItem) {
+        setupWeatherInputAlert()
     }
     
     //MARK: - Privates
@@ -51,6 +59,23 @@ class GalleryViewController: UIViewController {
         
         viewModel.onError = { [unowned self] errorMsg in
             self.alert(title: errorMsg).action().present(self)
+        }
+    }
+    
+    private func setupWeatherInputAlert() {
+        let inputAlert = alert(title: "Input weather")
+        inputAlert.addTextField()
+        inputAlert.action(title: "OK") { [unowned self] _ in
+            self.gifWeather = inputAlert.textFields!.first!.text
+            self.performSegue(withIdentifier: self.presentGIFVCSegueID, sender: self)
+        }.present(self)
+    }
+    
+    //MARK: - Navigation -
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gifVC = segue.destination as? GIFViewController {
+            gifVC.weather = gifWeather
         }
     }
 }

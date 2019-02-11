@@ -105,6 +105,8 @@ final class AddImageViewController: UIViewController {
     //MARK: - UI
     
     private func setupUI() {
+        navigationController?.navigationBar.tintColor = .darkGray
+        
         imagePickerHelper = ImagePickerHelper(with: self)
         
         hashtagsTextView?.addUnderlineLayer(height: 2.0)

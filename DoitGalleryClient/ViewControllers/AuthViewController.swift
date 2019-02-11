@@ -35,6 +35,8 @@ final class AuthViewController: UIViewController {
     
     private var flow: AuthViewControllerFlow = .signIn
     private let viewModel = AuthViewModel()
+    private var imagePickerHelper: ImagePickerHelper?
+    private let galleryNavigationControllerID = "GalleryNavigationController"
     
     //MARK: - Lifecycle -
     
@@ -46,24 +48,12 @@ final class AuthViewController: UIViewController {
         configViewsBehaviour()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
     //MARK: - Navigation -
     
     //MARKL - Actions -
     
     @objc private func chooseAvatar(_ sender: UIGestureRecognizer) {
-        pickUpPhoto()
+        imagePickerHelper?.pickUpPhoto()
     }
     
     @IBAction private func switchFlowAction(_ sender: UIButton) {
@@ -78,15 +68,15 @@ final class AuthViewController: UIViewController {
     //MARK: - UI -
     
     private func setupUI() {
-        usernameTextField?.addUnderlineLayer(width: 2.0)
-        emailTextField?.addUnderlineLayer(width: 2.0)
-        passwordTextField?.addUnderlineLayer(width: 2.0)
+        imagePickerHelper = ImagePickerHelper(with: self)
+        
+        flowChangeButton?.setTitle(flow.buttonTitle, for: .normal)
         
         guard let avatarImageView = avatarImageView else { return }
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2.0
-        
-        flowChangeButton?.setTitle(flow.buttonTitle, for: .normal)
+
+        imagePickerHelper?.setupPickerAction(on: avatarImageView, with: #selector(chooseAvatar(_:)))
     }
     
     private func performFlowUITransition() {
@@ -117,10 +107,8 @@ final class AuthViewController: UIViewController {
             }
         }
         
-        viewModel.onDone = {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let galleryVC = storyboard.instantiateViewController(withIdentifier: String(describing: GalleryViewController.self))
-            self.navigationController?.setViewControllers([galleryVC], animated: true)
+        viewModel.onDone = { [unowned self] in
+            self.setRootViewController()
         }
         
         viewModel.onError = { [unowned self] errorMsg in
@@ -172,32 +160,11 @@ final class AuthViewController: UIViewController {
         avatarImageView.addGestureRecognizer(tapRecognizer)
     }
     
-    private func pickUpPhoto() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        
-        let alertController = UIAlertController(title: nil,
-                                                message: nil,
-                                                preferredStyle: .actionSheet)
-        
-        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { [weak self] (alertAction) in
-            guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
-            
-            imagePicker.sourceType = .camera
-            self?.present(imagePicker, animated: true, completion: nil)
-        })
-        
-        let photoLibrary = UIAlertAction(title: "Photo Library", style: .default, handler: { [weak self] (alertAction) in
-            imagePicker.sourceType = .photoLibrary
-            self?.present(imagePicker, animated: true, completion: nil)
-        })
-        
-        alertController.addAction(cameraAction)
-        alertController.addAction(photoLibrary)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(alertController, animated: true)
+    private func setRootViewController() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let navigation = storyBoard.instantiateViewController(withIdentifier: self.galleryNavigationControllerID) as! UINavigationController
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.window!.rootViewController = navigation
     }
 }
 

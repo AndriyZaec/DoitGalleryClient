@@ -9,6 +9,7 @@ target 'DoitGalleryClient' do
   # UI
   pod 'IQKeyboardManagerSwift'
   pod 'Nuke', '~> 7.5'
+  pod 'Nuke-FLAnimatedImage-Plugin'
   
   # Utils
   pod 'SwiftKeychainWrapper'

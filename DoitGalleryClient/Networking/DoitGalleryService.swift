@@ -14,6 +14,7 @@ typealias PostImageParameters = (image: UIImage, description: String, hashtag: S
 enum DoitGalleryService {
     case getUserImages
     case postImage(PostImageParameters)
+    case getGifImage(_ weather: String?)
 }
 
 extension DoitGalleryService: TargetType {
@@ -27,12 +28,14 @@ extension DoitGalleryService: TargetType {
             return "/all"
         case .postImage:
             return "/image"
+        case .getGifImage:
+            return "/gif"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getUserImages:
+        case .getUserImages, .getGifImage:
             return .get
         case .postImage:
             return .post
@@ -44,7 +47,12 @@ extension DoitGalleryService: TargetType {
     }
     
     var params: [String: Any]? {
-        return nil
+        switch self {
+        case .getGifImage(let weather):
+            return weather != nil ? ["weather": weather!] : nil
+        default:
+            return nil
+        }
     }
     
     var multipartParams: [MultipartFormData]? {
@@ -75,13 +83,22 @@ extension DoitGalleryService: TargetType {
         switch self {
         case .getUserImages:
             return .requestPlain
+        case .getGifImage:
+            return .requestParameters(parameters: params ?? [:], encoding: URLEncoding.default)
         case .postImage:
             return .uploadMultipart(multipartParams ?? [])
         }
     }
     
     var headers: [String : String]? {
-        return ["token": DoitKeychain.wrapper.authToken ?? ""]
+        switch self {
+        case .postImage:
+            return ["Content-type" : "multipart/form-data",
+                    "token": DoitKeychain.wrapper.authToken ?? ""]
+        default:
+            return ["Content-type" : "application/json",
+                    "token": DoitKeychain.wrapper.authToken ?? ""]
+        }
     }
     
     var validationType: ValidationType {
