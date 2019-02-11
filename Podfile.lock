@@ -22,7 +22,7 @@ DEPENDENCIES:
   - SwiftKeychainWrapper
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - FLAnimatedImage
     - IQKeyboardManagerSwift
@@ -44,4 +44,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9df98c2d9e0dcf708c2bc751d63ab78a8832a737
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
